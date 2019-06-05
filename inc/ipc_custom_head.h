@@ -68,6 +68,7 @@ static IPC_Handl_t * tmpIpc;
 static void Ipc_init()
 {
 	tmpIpc = (IPC_Handl_t*)malloc(IPC_MAX* sizeof(IPC_Handl_t));
+	memset(tmpIpc,0,sizeof(IPC_Handl_t)*IPC_MAX);
 	char tmp[256] = {"/"};
 	memcpy(tmpIpc[IPC_TOIMG_MSG].name,tmp,sizeof(tmp));
 	tmpIpc[IPC_TOIMG_MSG].Identify = IPC_TOIMG_MSG;

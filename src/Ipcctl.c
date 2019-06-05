@@ -62,6 +62,9 @@ int Ipc_create(IPC_Handl_t * in)
 		{
 			switch(IpcHandl[i].Class)
 			{
+				case IPC_Class_INVALID:
+					//do nothing
+					break;
 				case IPC_Class_MSG:
 					key = messageKeyGet(IpcHandl[i].name,IpcHandl[i].Identify);
 					IpcHandl[i].IPCID = messageQueueCreate(key);

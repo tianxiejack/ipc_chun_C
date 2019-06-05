@@ -5,10 +5,11 @@
 
 typedef enum 
 {
-    IPC_Class_MSG,  
-    IPC_Class_SHA,
-    IPC_Class_SEM,
-    IPC_ClassMAX
+	IPC_Class_INVALID,
+	IPC_Class_MSG,  
+	IPC_Class_SHA,
+	IPC_Class_SEM,
+	IPC_ClassMAX
 }IPC_Class;
 
 typedef struct{
