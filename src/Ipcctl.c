@@ -17,7 +17,7 @@ int ipc_sendmsg(int HandlID ,SENDST* Param)
 	char buffer[MESSAGE_SIZE];
 	memset(buffer,0,sizeof(buffer));
 	int mtype=1;
-    memcpy(buffer,Param,sizeof(SENDST));
+	memcpy(buffer,Param,sizeof(SENDST));
 	setMessage(&msg, buffer, MESSAGE_SIZE, mtype);
 	/* Send message: */
 	ret = messageQueueSend(IpcHandl[HandlID].IPCID, &msg);

@@ -105,7 +105,7 @@ int messageQueueSend(int qid, Message* msg)
 	}
 */
 	int ret;
-	if ((ret = msgsnd(qid, msg, sizeof(Message) - sizeof(long), 0)) == -1)
+	if ((ret = msgsnd(qid, msg, sizeof(Message) - sizeof(long), IPC_NOWAIT)) == -1)
 	{
 		msg->err=errno;
 		return -1;
